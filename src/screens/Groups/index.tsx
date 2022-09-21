@@ -1,12 +1,8 @@
 import * as React from "react";
-import { View, Text } from "react-native";
+import * as S from "./styles";
 
 const Groups: React.FC = () => {
-  return (
-    <View>
-      <Text>index</Text>
-    </View>
-  );
+  return <S.Container></S.Container>;
 };
 
 export default Groups;
