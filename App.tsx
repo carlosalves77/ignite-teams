@@ -1,3 +1,4 @@
+import React from "react";
 import { StatusBar } from "react-native";
 import { ThemeProvider } from "styled-components";
 import {
@@ -8,6 +9,8 @@ import {
 
 import { Loading } from "@components/Loading";
 import { Groups } from "@screens/Groups";
+import { NewGroup } from "@screens/NewGroup";
+import { Players } from "@screens/Players";
 import theme from "./src/theme";
 
 export default function App() {
