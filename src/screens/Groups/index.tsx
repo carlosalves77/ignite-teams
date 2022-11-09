@@ -1,15 +1,15 @@
 import React, { useState, useCallback } from "react";
 import * as S from "./styles";
 
-import { FlatList } from "react-native";
+import { Alert, FlatList } from "react-native";
+import { useNavigation, useFocusEffect } from "@react-navigation/native";
+import { groupsGetAll } from "@storage/group/groupsGetAll";
 
 import { Header } from "@components/Header";
 import { Highlight } from "@components/Highlight";
 import { GroupCArd } from "@components/GroupCard";
 import { ListEmpty } from "@components/ListEmpty";
 import { Button } from "@components/Button";
-import { useNavigation, useFocusEffect } from "@react-navigation/native";
-import { groupsGetAll } from "@storage/group/groupsGetAll";
 
 export function Groups() {
   const [groups, setGroups] = useState<string[]>([]);
@@ -25,6 +25,7 @@ export function Groups() {
       setGroups(data);
     } catch (error) {
       console.log(error);
+      Alert.alert("Turmas", "Não foi possivel carregar as turmas");
     }
   }
 
@@ -34,7 +35,6 @@ export function Groups() {
 
   useFocusEffect(
     useCallback(() => {
-      console.log("useFocusEffect");
       fetchGroups();
     }, [])
   );
